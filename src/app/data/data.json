@@ -1,0 +1,303 @@
+[
+  {
+    "id": 1,
+    "title": "Big Potatos",
+    "price": 14.99,
+    "description": "Russet potatoes, also known as Idaho potatoes, are ideal for making baked potatoes. They are large with a long oval shape and brown skin. Their flesh is starchy, so they become fluffy and flaky when cooked.",
+    "category": "Vegetables",
+    "image": "/assets/potatos.png",
+    "rating": {
+      "rate": 4,
+      "count": 120
+    }
+  },
+
+  {
+    "id": 2,
+    "title": "Chanise Cabbage",
+    "price": 11.99,
+    "description": "The Chinese cabbage occurs in both annual and biennial forms but is cultivated as an annual. It forms an upright head of either tightly overlapping leaves or sometimes a looser head of more separated leaves. Shape and size differ markedly between cultivars and head weight may vary between 1.4 and 4.5 kg",
+    "category": "Vegetables",
+    "image": "/assets/banana.png",
+    "rating": {
+        "rate": 4.1,
+        "count": 259
+    }
+  },
+  {
+    "id": 3,
+    "title": "Ladies Finger",
+    "price": 8.99,
+    "description": "Lady Finger has small yellow kernels that are very tender when popped. Short stocky plants yield 1 to 4 slender 6″ to 7″ ears of mostly yellow kernels with a sprinkling of red and purple.",
+    "category": "Vegetables",
+    "image": "/assets/Ladies_Finger.png",
+    "rating": {
+      "rate": 4.7,
+      "count": 500
+    }
+  },
+  {
+    "id": 4,
+    "title": "Eggplant",
+    "price": 5.77,
+    "description": "Eggplant is an annual or short-lived perennial plant that is very sensitive to cold temperatures. It grows fastest when the temperature ranges between 70 and 85 degrees. It produces an edible shiny glossy fruit. The plant may grow 2 to 4 feet tall and is multi-branched.",
+    "category": "Vegetables",
+    "image": "/assets/Eggplant.png",
+    "rating": {
+      "rate": 2.1,
+      "count": 430
+    }
+  },
+  {
+    "id": 5,
+    "title": "Fresh Cauliflower",
+    "price": 5.25,
+    "description": "It is delicate and mild with a hint of pepperiness. Cauliflower's crisp texture yields a pleasing crunch when included in salads or used as a vessel for dips. The stalk of a cauliflower plant has a similar texture to broccoli (albeit less bendable), while the head is more crumbly and delicate.",
+    "category": "Vegetables",
+    "image": "/assets/Fresh Cauliflower.png",
+    "rating": {
+      "rate": 4.6,
+      "count": 400
+    }
+  },
+  {
+    "id": 6,
+    "title": "Green Apple",
+    "price": 7.00,
+    "description": "Green apples are medium in size (approximately 2 ¼ inches across) and round-conical in shape, with some ribbing. The Green apple's white flesh is hard, crispy, and juicy. The flavor of Green apples is extremely acidic, sometimes to the point of not having other taste, but generally refreshing.",
+    "category": "Fruit",
+    "image": "/assets/Green Apple.png",
+    "rating": {
+      "rate": 3.9,
+      "count": 70
+    }
+  },
+  {
+    "id": 7,
+    "title": "Green Capsicum",
+    "price": 4.99,
+    "description": "Green capsicum—known in other parts of the world as a bell pepper—has crisp, shiny, moist flesh and hollow with a seeded core. Green varieties are less sweet and slightly more bitter than other colours of capsicum.",
+    "category": "Vegetables",
+    "image": "/assets/green-capsicum.png",
+    "rating": {
+      "rate": 3,
+      "count": 400
+    }
+  },
+  {
+    "id": 8,
+    "title": "Green Chili",
+    "price": 3.99,
+    "description": "Green chillies are hollow, and the pith and seeds are the hottest part. Green chillies have a different flavour to other coloured chillies. Chilli heat is related to capsaicin content and measured in Scoville units.",
+    "category": "Vegetables",
+    "image": "/assets/green-chili.png",
+    "rating": {
+      "rate": 1.9,
+      "count": 100
+    }
+  },
+  {
+    "id": 9,
+    "title": "Green Cucumber",
+    "price": 7.45,
+    "description": "Tasty Green Cucumber is a hybrid, burpless variety that produces 8-10″ long, slender, smooth fruits. Resistant to powdery mildew and downy mildew. Monoecious variety",
+    "category": "Vegetables",
+    "image": "/assets/Green Cucumber.png",
+    "rating": {
+      "rate": 3.3,
+      "count": 203
+    }
+  },
+  {
+    "id": 10,
+    "title": "Green Littuce",
+    "price": 2.99,
+    "description": "Green leaf lettuce may look like romaine, but it's actually not the same. It does, however, make a great substitute for romaine, and like romaine and iceberg, green leafy lettuce is a member of the asteraceae family. Green leaf lettuce is soft and tender with a very mild flavor.",
+    "category": "Vegetables",
+    "image": "/assets/Green Littuce.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 470
+    }
+  },
+  {
+    "id": 11,
+    "title": "Ladies Finger",
+    "price": 3.89,
+    "description": "The most common variety of Lady's-Finger is slender and green, but there are also red varieties, and varieties with very plump fruits. This plant is part of the Malvaceae or Hibiscus family, which includes other edible plants like the Cranberry Hibiscus.",
+    "category": "Vegetables",
+    "image": "/assets/Ladies Finger.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 319
+    }
+  },
+  {
+    "id": 12,
+    "title": "Green Capsicum",
+    "price": 11.4,
+    "description": "Green capsicum—known in other parts of the world as a bell pepper—has crisp, shiny, moist flesh and hollow with a seeded core. Green varieties are less sweet and slightly more bitter than other colours of capsicum.",
+    "category": "Vegetables",
+    "image": "/assets/Green-Capsicum-2.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 400
+    }
+  },
+  {
+    "id": 13,
+    "title": "Red Chili",
+    "price": 3.29,
+    "description": "Red chillies are hollow, and the pith and seeds are the hottest part. Many red chillies are milder than green chillies, although there are hundreds of varieties. Chilli heat is related to capsaicin content and measured in Scoville units.",
+    "category": "Vegetables",
+    "image": "/assets/red-chili.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 250
+    }
+  },
+  {
+    "id": 14,
+    "title": "Red Tomato",
+    "price": 9.99,
+    "description": "The 2 x 4 inch deep-red fruits are a striking departure from modern tomatoes, featuring heavy ribbing or lobes and a flattened shape. Revered for its historical significance, the Large Red tomato was a staple in ante-bellum garden recreations and historic farms",
+    "category": "Vegetables",
+    "image": "/assets/Red Tomato.png",
+    "rating": {
+      "rate": 2.2,
+      "count": 140
+    }
+  },
+  {
+    "id": 15,
+    "title": "Fresh Mango",
+    "price": 5.55,
+    "description": "The skin is leather-like, waxy, smooth, and fragrant, with colors ranging from green to yellow, yellow-orange, yellow-red, or blushed with various shades of red, purple, pink, or yellow when fully ripe. Ripe intact mangoes give off a distinctive resinous, sweet smell.",
+    "category": "Fruit",
+    "image": "/assets/mango.png",
+    "rating": {
+      "rate": 2.6,
+      "count": 235
+    }
+  },
+  {
+    "id": 16,
+    "title": "Banana",
+    "price":4.55,
+    "description": "A banana is a curved, yellow fruit with a thick skin and soft sweet flesh. If you eat a banana every day for breakfast, your roommate might nickname you A banana is a tropical fruit that's quite popular all over the world. It grows in bunches on a banana tree.",
+    "category": "Fruit",
+    "image": "/assets/banana.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 340
+    }
+  },
+  {
+    "id": 17,
+    "title": "Schweppes Lemonade",
+    "price": 2.99,
+    "description": "Schweppes Lemonade delivers a tangy burst of real lemon juice intertwined with effervescent bubbles, creating a heavenly citrus sensation. Enjoy its delightful flavour on its own or use it to infuse a fabulous fizz into vodka or gin cocktails. Store in a cool, dry place away from direct sunlight. Best served chilled.",
+    "category": "Beverages",
+    "image": "/assets/lemonade.png",
+    "rating": {
+      "rate": 3.8,
+      "count": 679
+    }
+  },
+  {
+    "id": 18,
+    "title": "Wine",
+    "price": 19.85,
+    "description": "Red wine is made with dark-skinned rather than light-skinned grapes. During red wine production, the winemaker allows pressed grape juice, called must, to macerate and ferment with the dark grape skins, which adds color, flavor and tannin to the wine.",
+    "category": "Beverages",
+    "image": "/assets/wine.png",
+    "rating": {
+      "rate": 4.7,
+      "count": 130
+    }
+  },
+  {
+    "id": 19,
+    "title": "Mojito",
+    "price": 14.95,
+    "description": " The cocktail often consists of five ingredients: white rum, sugar (traditionally sugar cane juice), lime juice, soda water, and mint.Its combination of sweetness, citrus, and herbaceous mint flavors is intended to complement the rum, and has made the mojito a popular summer drink.",
+    "category": "women's clothing",
+    "image": "/assets/mohito.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 146
+    }
+  },
+  {
+    "id": 20,
+    "title": "Bread",
+    "price": 2.99,
+    "description": "bread, baked food product made of flour or meal that is moistened, kneaded, and sometimes fermented. A major food since prehistoric times, it has been made in various forms using a variety of ingredients and methods throughout the world.",
+    "category": "Bread & Bakery",
+    "image": "/assets/bread.png",
+    "rating": {
+      "rate": 3.6,
+      "count": 145
+    }
+  },
+  {
+    "id": 21,
+    "title": "Vanilla Cookies",
+    "price": 2.99,
+    "description": "A cookie (American English) or biscuit (British English) is a baked snack or dessert that is typically small, flat, and sweet. It usually contains flour, sugar, egg, and some type of oil, fat, or butter. It may include other ingredients such as raisins, oats, chocolate chips, or nuts. Cookie.",
+    "category": "Bread & Bakery",
+    "image": "/assets/cookies.png",
+    "rating": {
+      "rate": 3.6,
+      "count": 145
+    }
+  },
+  {
+    "id": 22,
+    "title": "Panna Cotta",
+    "price": 22.99,
+    "description": "The name panna cotta is not mentioned in Italian cookbooks before the 1960s,[1][2] yet it is often cited as a traditional dessert of the northern Italian region of Piedmont.One unverified story says that it was invented by a Hungarian woman in the Langhe in the early 19th century.[",
+    "category": "Bread & Bakery",
+    "image": "/assets/panna-cotta.png",
+    "rating": {
+      "rate": 3.6,
+      "count": 145
+    }
+  },
+  {
+    "id": 23,
+    "title": "Potato Chips",
+    "price": 12.99,
+    "description": "A potato chip (NAmE and AuE; often just chip) or crisp (BrE and IrE) is a thin slice of potato (or a thin deposit of potato paste) that has been deep fried, baked, or air fried until crunchy. They are commonly served as a snack, side dish, or appetizer.",
+    "category": "Snacks",
+    "image": "/assets/chips.jpeg",
+    "rating": {
+      "rate": 3.6,
+      "count": 145
+    }
+  },
+  {
+    "id": 24,
+    "title": "Crackers",
+    "price": 2.99,
+    "description": "A cracker is a flat, dry baked biscuit typically made with flour. Flavorings or seasonings, such as salt, herbs, seeds, or cheese, may be added to the dough or sprinkled on top before baking.[1] Crackers are often branded as a nutritious and convenient way to consume a staple food or cereal grain.",
+    "category": "Snacks",
+    "image": "/assets/Crackers.png",
+    "rating": {
+      "rate": 3.6,
+      "count": 145
+    }
+  },
+  {
+    "id": 24,
+    "title": "Bounty",
+    "price": 7.99,
+    "description": "Bounty is a coconut-filled, chocolate-enrobed candy bar manufactured by Mars, Incorporated, introduced in 1951 in the United Kingdom and Canada. It is a direct emulation of the Mounds bar introduced by Peter Paul in 1936, and also copies the milk chocolate enrobing of Hershey's Almond Joy, introduced in 1948.",
+    "category": "Snacks",
+    "image": "/assets/bounty.jpg",
+    "rating": {
+      "rate": 3.6,
+      "count": 145
+    }
+  }
+]
