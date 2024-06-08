@@ -9,28 +9,8 @@ type CartItemPropsType = {
 function CartItem({ cartItem }: CartItemPropsType) {
   const context = useContext(ClobalContext);
   if (!context) return;
-  const { shoppingCartItems, increment, decrement, setTotalPrice, setTotalCount } = context;
+  const { increment, decrement, removeCartItem } = context;
 
-  useEffect(() => {
-    if (cartItem.count && shoppingCartItems.length > 0) {
-      const totalCount = shoppingCartItems.reduce((acc, item) => {
-        if (item && item.count) {
-          return acc + item.count;
-        }
-        return acc;
-      }, 0);
-  
-      const totalPrice = shoppingCartItems.reduce((acc, item) => {
-        if (item && item.count && item.price) {
-          return acc + (item.count * item.price);
-        }
-        return acc;
-      }, 0);
-  
-      setTotalCount(totalCount);
-      setTotalPrice(totalPrice);
-    }
-  }, [cartItem.count, shoppingCartItems]);
   
 
   return (
@@ -71,7 +51,9 @@ function CartItem({ cartItem }: CartItemPropsType) {
             </li>
           </ul>
           <div className="w-[15%] md:w-[10%] flex items-center justify-center">
-            <button className="w-6 h-6 md:w-8 md:h-8 bg-gray-300 rounded-full text-sm md:text-md ">
+            <button
+            onClick={() => (removeCartItem(cartItem.id))}
+            className="w-6 h-6 md:w-8 md:h-8 bg-gray-300 rounded-full text-sm md:text-md ">
               x
             </button>
           </div>

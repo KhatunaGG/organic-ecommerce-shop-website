@@ -6,12 +6,12 @@ import React, { useContext } from "react";
 const SignSection = () => {
   const context = useContext(ClobalContext);
   if (!context) return;
-  const { cartLength } = context;
+  const { totalPrice, totalCount } = context;
 
 
   
   return (
-    <section className="w-full h-[15vh] md:h-[8vh]  bg-green-950 flex flex-row items-center flex-grow justify-between px-[3%] lg:px-[7%] ">
+    <section className="w-full h-[15vh] md:h-[8vh] bg-green-950 flex flex-row items-center flex-grow justify-between px-[3%] lg:px-[7%] ">
       <div className="w-full flex flex-row ">
         <div className="w-[10%] md:w-0 md:hidden bg-pink-200 flex items-center justify-center">
           ddd
@@ -30,7 +30,7 @@ const SignSection = () => {
             <div className="relative">
               <img src="/assets/Bag.svg" alt="" className="md:w-6 h-6" />
               <div className="w-5 h-5 rounded-full bg-[#ffffff7c] absolute top-[-2px] right-[-9px] flex items-center justify-center text-red-600 font-bold text-sm ">
-                {cartLength ? cartLength : 0}
+                {totalCount ? totalCount : 0}
               </div>
             </div>
 
@@ -39,7 +39,7 @@ const SignSection = () => {
                 Shopping cart:
               </p>
               <p className="text-[13px] text-[#898787] font-bold text-base  ">
-                $ 1234567
+                $ {totalPrice ? totalPrice.toFixed(2) : 0.00}
               </p>
             </div>
           </div>

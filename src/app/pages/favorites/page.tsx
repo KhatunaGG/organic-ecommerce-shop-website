@@ -6,7 +6,9 @@ export default function page() {
     <div>
       <SignSection />
       <Hero />
-      <div className='w-full px-[3%] lg:px-[7%]'></div>
+      <div className='w-full px-[3%] lg:px-[7%]'>
+        
+      </div>
     </div>
   )
 }

@@ -13,7 +13,9 @@ export type GlobalStateType = {
   increment: (value: number) => void;
   decrement: (value: number) => void;
   setTotalCount: React.Dispatch<React.SetStateAction<number>>;
-  cartLength: number;
+  totalCount: number;
+  removeCartItem: (value: number) => void;
+  setShoppingCartItems: React.Dispatch<React.SetStateAction<DataType[]>>;
 };
 
 export type RatingType = {
@@ -43,16 +45,39 @@ const Context = ({ children }: { children: React.ReactNode }) => {
   const [shoppingCartItems, setShoppingCartItems] = useState<DataType[]>([]);
   const [totalPrice, setTotalPrice] = useState(0)
   const [totalCount, setTotalCount] = useState(0)
-  const [cartLength, setCartLength] = useState(0)
-  console.log(totalPrice, 'totalPrice')
-  console.log(totalCount, 'totalCount')
+  // const [favorites, setFavorites] = useState([])
+
 
     
 
   useEffect(() => {
     setLength(data.length);
-    setCartLength(shoppingCartItems.length)
-  }, [shoppingCartItems, data]);
+ 
+  }, []);
+
+  useEffect(() => {
+    if (shoppingCartItems.length > 0) {
+      const totalCount = shoppingCartItems.reduce((acc, item) => acc + (item.count || 0), 0);
+      const totalPrice = shoppingCartItems.reduce((acc, item) => acc + ((item.count || 0) * item.price), 0);
+      setTotalCount(totalCount);
+      setTotalPrice(totalPrice);
+    } else {
+      setTotalCount(0);
+      setTotalPrice(0);
+    }
+  }, [shoppingCartItems]);
+
+
+
+
+
+
+
+
+
+
+
+
 
  
   const addToCart = (productItem: DataType) => {
@@ -99,6 +124,13 @@ const Context = ({ children }: { children: React.ReactNode }) => {
   };
   
 
+  const removeCartItem = (removeId: number) => {
+    const updatedShoppingCart = shoppingCartItems.filter((item) => item.id !== removeId)
+    console.log(updatedShoppingCart)
+
+     return setShoppingCartItems(updatedShoppingCart)
+
+  }
  
 
 
@@ -124,7 +156,9 @@ const Context = ({ children }: { children: React.ReactNode }) => {
         increment,
         decrement,
         setTotalCount,
-        cartLength
+        totalCount,
+        removeCartItem,
+        setShoppingCartItems
       }}
     >
       {children}
