@@ -31,18 +31,18 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Header = () => {
   return (
     <div className="relative">
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-xl w-full flex flex-col items-start gap-4 px-[7%] z-10">
-       <div className="flex flex-row items-center gap-4">
-       <img src="/assets/leaf.svg" alt="" />
-       <img src="/assets/Ecobazar.svg" alt="" />
-       </div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-xl w-full flex flex-col items-start gap-4 px-[3%] lg:px-[7%] z-10">
+        <div className="flex flex-row items-center gap-4">
+          <img src="/assets/leaf.svg" alt="" />
+          <img src="/assets/Ecobazar.svg" alt="" />
+        </div>
 
         <div className="flex flex-row space-x-2 items-center">
           <img src="/assets/home.svg" alt="" />
           <img src="/assets/arrow.svg" alt="" />
           <p className="text-gray-800 text-xs">Category</p>
           <img src="/assets/arrow.svg" alt="" />
-          <p className=" text-xs text-green-900 font-bold">Vegetables</p>
+          <p className="text-xs text-red-700 font-bold">Vegetables</p>
         </div>
       </div>
 

@@ -18,7 +18,7 @@
     "price": 11.99,
     "description": "The Chinese cabbage occurs in both annual and biennial forms but is cultivated as an annual. It forms an upright head of either tightly overlapping leaves or sometimes a looser head of more separated leaves. Shape and size differ markedly between cultivars and head weight may vary between 1.4 and 4.5 kg",
     "category": "Vegetables",
-    "image": "/assets/banana.png",
+    "image": "/assets/cabbage.png",
     "rating": {
         "rate": 4.1,
         "count": 259
@@ -256,7 +256,7 @@
     "id": 22,
     "title": "Panna Cotta",
     "price": 22.99,
-    "description": "The name panna cotta is not mentioned in Italian cookbooks before the 1960s,[1][2] yet it is often cited as a traditional dessert of the northern Italian region of Piedmont.One unverified story says that it was invented by a Hungarian woman in the Langhe in the early 19th century.[",
+    "description": "The name panna cotta is not mentioned in Italian cookbooks before the 1960s,[1][2] yet it is often cited as a traditional dessert of the northern Italian region of Piedmont.One unverified story says that it was invented by a Hungarian woman in the Langhe in the early 19th century.",
     "category": "Bread & Bakery",
     "image": "/assets/panna-cotta.png",
     "rating": {
@@ -289,7 +289,7 @@
     }
   },
   {
-    "id": 24,
+    "id": 25,
     "title": "Bounty",
     "price": 7.99,
     "description": "Bounty is a coconut-filled, chocolate-enrobed candy bar manufactured by Mars, Incorporated, introduced in 1951 in the United Kingdom and Canada. It is a direct emulation of the Mounds bar introduced by Peter Paul in 1936, and also copies the milk chocolate enrobing of Hershey's Almond Joy, introduced in 1948.",

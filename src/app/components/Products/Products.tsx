@@ -6,16 +6,16 @@ import Product from "../Product/Product";
 const Products = () => {
   const context = useContext(ClobalContext);
   if (!context) return;
-  const { data } = context;
-  console.log(data);
+  const { data, length } = context;
+
 
   return (
-    <div className="  mx-auto gap-[2%] flex flex-row items-start mt-8 mb-10">
-      <div className="w-[25%]">
-        <h2 className="text-gray-400">52 Results Found</h2>
+    <div className="mx-auto gap-[2%] flex flex-row items-center md:items-start mt-8 mb-10">
+      <div className="hidden w-[25%] md:flex">
+        <h2 className="text-gray-400">{length} Results Found</h2>
       </div>
 
-      <div className="w-[73%] grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3  ">
+      <div className="w-full  grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 md:w-[73%]  gap-x-4 gap-y-4">
         {data.slice(0, 6).map((item, i) => (
           <Product key={i} product={item} />
         ))}
@@ -23,7 +23,7 @@ const Products = () => {
         <img
           src="/assets/Breadcrumbs.png"
           alt=""
-          className="col-span-full shadow-md h-[15vh]"
+          className="col-span-full shadow-md h-[15vh] mt-10 mb-10"
         />
 
         <div className="md:col-span-2">
