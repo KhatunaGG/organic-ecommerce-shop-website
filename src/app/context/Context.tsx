@@ -2,7 +2,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import datajson from "../data/data.json";
 
-
 export type GlobalStateType = {
   data: DataType[];
   addToCart: (value: DataType) => void;
@@ -22,6 +21,11 @@ export type GlobalStateType = {
   handleFilter: (num: number, str: string) => void;
   value: number[];
   setValue: React.Dispatch<React.SetStateAction<number[]>>;
+  getInputSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSearch: (e: React.FormEvent<HTMLFormElement>) => void;
+  search: string;
+
+  setButtonInnerText: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export type RatingType = {
@@ -52,50 +56,58 @@ const Context = ({ children }: { children: React.ReactNode }) => {
   const [favorites, setFavorites] = useState<DataType[]>([]);
   const [categoryArray, setCategoryArray] = useState<string[]>([]);
   const [checked, setChecked] = useState<number | null>(null);
-
   const [value, setValue] = useState<number[]>([0, 20]);
+  const [search, setSearch] = useState("");
+  const [buttonInnerText, setButtonInnerText] = useState("");
 
-
-  // useEffect(() => {
-  //   const categorySet = new Set(data.map((product) => product.category));
-  //   setCategoryArray(Array.from(categorySet));
-  // }, [data]);
-
-  // useEffect(() => {
-  //   const categorySet = new Set(typedDataJson.map((product) => product.category));
-  //   setCategoryArray(Array.from(categorySet));
-  // }, []);
   useEffect(() => {
     const categorySet = new Set(data.map((product) => product.category));
     setCategoryArray(Array.from(categorySet));
   }, []);
 
-
-
-
-
-
-
-  // useEffect(() => {
-  //   setLength(typedDataJson.length);
-  // }, [typedDataJson.length]);
-
-
-
   const handleFilter = (index: number, categoryitem: string) => {
-    if(checked === index) {
-      setChecked(null)
-      setData(typedDataJson)
+    if (checked === index) {
+      setChecked(null);
+      setData(typedDataJson);
     } else {
-      setChecked(index)
-      setData(typedDataJson.filter((item) => item.category.toLowerCase() === categoryitem))
+      setChecked(index);
+      setData(
+        typedDataJson.filter(
+          (item) => item.category.toLowerCase() === categoryitem
+        )
+      );
     }
   };
 
+  const getInputSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+    setSearch(e.target.value);
+  };
 
+  // const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   if(!search) {
+  //     setData(data)
+  //   } else {
+  //     setData(typedDataJson.filter((item) => item.title.toLowerCase().includes(search.toLowerCase())))
+  //   }
+  // }
 
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (search && buttonInnerText.toLowerCase() === "search") {
+      setData(
+        typedDataJson.filter((item) =>
+          item.title.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+      setSearch("");
+    } else {
+      setData(typedDataJson);
+    }
+  };
 
-
+  
 
   useEffect(() => {
     if (shoppingCartItems.length > 0) {
@@ -172,7 +184,6 @@ const Context = ({ children }: { children: React.ReactNode }) => {
     return setShoppingCartItems(updatedShoppingCart);
   };
 
-
   return (
     <ClobalContext.Provider
       value={{
@@ -193,7 +204,11 @@ const Context = ({ children }: { children: React.ReactNode }) => {
         checked,
         handleFilter,
         value,
-        setValue
+        setValue,
+        getInputSearch,
+        handleSearch,
+        search,
+        setButtonInnerText,
       }}
     >
       {children}

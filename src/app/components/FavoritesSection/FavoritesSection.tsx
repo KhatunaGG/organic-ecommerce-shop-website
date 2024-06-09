@@ -2,6 +2,7 @@
 import { ClobalContext } from "@/app/context/Context";
 import React, { useContext } from "react";
 import Product from "../Product/Product";
+import Scroll from "../Scroll/Scroll";
 
 const FavoritesSection = () => {
   const context = useContext(ClobalContext);
@@ -17,6 +18,7 @@ const FavoritesSection = () => {
       {favorites.map((product, i) => (
         <Product key={i} product={product} />
       ))}
+      <Scroll />
     </div>
   );
 };

@@ -1,12 +1,20 @@
-import React from "react";
+'use client'
+import { ClobalContext } from "@/app/context/Context";
+import React, { useContext } from "react";
 
 type ButtonPropsType = {
   text: string;
   width?: string;
   rounded?: string;
+
 };
 
 const Button = ({ text, width, rounded }: ButtonPropsType) => {
+  const context = useContext(ClobalContext);
+  if (!context) return;
+  const { setButtonInnerText } = context;
+  setButtonInnerText(text)
+  
   return (
     <button
       style={{ width: width, borderRadius: rounded }}

@@ -2,6 +2,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import Link from "next/link";
+import Search from "../Search/Search";
 
 
 const Nav = () => {
@@ -9,7 +10,9 @@ const Nav = () => {
 
   return (
     <div className="h-[10vh] flex flex-row items-center">
-      <form className="px-[3%] lg:px-[7%] py-2 w-[50%] relative flex items-center">
+      <Search />
+
+      {/* <form className="px-[3%] lg:px-[7%] py-2 w-[50%] relative flex items-center">
         <img
           src="/assets/search-icon.svg"
           alt=""
@@ -20,7 +23,7 @@ const Nav = () => {
           type="text"
         />
         <Button text="Search" width="20%" />
-      </form>
+      </form> */}
 
       <div className="h-[70%] w-[1px] bg-[#b6b2b2]"></div>
 

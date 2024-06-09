@@ -68,7 +68,7 @@ function Filter() {
             value={value}
             valueLabelDisplay="auto"
             step={1}
-            className="w-[150px] lg:w-[200px] mt-4"
+            className="w-[150px] lg:w-[180px] mt-4"
           />
     </div>
   );
