@@ -176,7 +176,7 @@
     "category": "Fruit",
     "image": "/assets/mango.png",
     "rating": {
-      "rate": 2.6,
+      "rate": 4.6,
       "count": 235
     }
   },
@@ -221,7 +221,7 @@
     "title": "Mojito",
     "price": 14.95,
     "description": " The cocktail often consists of five ingredients: white rum, sugar (traditionally sugar cane juice), lime juice, soda water, and mint.Its combination of sweetness, citrus, and herbaceous mint flavors is intended to complement the rum, and has made the mojito a popular summer drink.",
-    "category": "women's clothing",
+    "category": "Beverages",
     "image": "/assets/mohito.jpg",
     "rating": {
       "rate": 4.5,
@@ -248,7 +248,7 @@
     "category": "Bread & Bakery",
     "image": "/assets/cookies.png",
     "rating": {
-      "rate": 3.6,
+      "rate": 3.2,
       "count": 145
     }
   },
@@ -260,7 +260,7 @@
     "category": "Bread & Bakery",
     "image": "/assets/panna-cotta.png",
     "rating": {
-      "rate": 3.6,
+      "rate": 4.1,
       "count": 145
     }
   },
@@ -272,7 +272,7 @@
     "category": "Snacks",
     "image": "/assets/chips.jpeg",
     "rating": {
-      "rate": 3.6,
+      "rate": 2.3,
       "count": 145
     }
   },
@@ -296,7 +296,7 @@
     "category": "Snacks",
     "image": "/assets/bounty.jpg",
     "rating": {
-      "rate": 3.6,
+      "rate": 1.99,
       "count": 145
     }
   }

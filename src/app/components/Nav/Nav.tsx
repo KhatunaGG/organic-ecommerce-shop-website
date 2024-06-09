@@ -2,7 +2,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+
 
 const Nav = () => {
 
@@ -25,9 +25,8 @@ const Nav = () => {
       <div className="h-[70%] w-[1px] bg-[#b6b2b2]"></div>
 
       <div className="w-[50%] flex items-center justify-start gap-4 text-[#7d7979] font-bold cursor-pointer ml-4">
-       
-        <Link href={`pages/favorites`}>
-          <span className="">Favorites</span>
+        <Link href={`pages/favorites`} >
+          <span>Favorites</span>
         </Link>
         <Link href={`/pages/shoppingcart`}>
           <span>Sopping Cart</span>

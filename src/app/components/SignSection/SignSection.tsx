@@ -2,11 +2,12 @@
 import { ClobalContext } from "@/app/context/Context";
 import Link from "next/link";
 import React, { useContext } from "react";
+import { BagIcon, HeartIcon } from "../_atoms";
 
 const SignSection = () => {
   const context = useContext(ClobalContext);
   if (!context) return;
-  const { totalPrice, totalCount } = context;
+  const { totalPrice, totalCount, favorites } = context;
 
 
   
@@ -20,16 +21,16 @@ const SignSection = () => {
         <div className="w-[90%] md:w-full  flex flex-col items-center md:justify-between md:flex-row gap-1 ms:gap-0">
           <div className="w-full md:w-[50%] flex flex-row justify-end md:justify-start gap-4">
             <div className="relative">
-              <img src="/assets/Heart (1).svg" alt="" className="md:w-6 h-6" />
-              <div className="w-5 h-5 rounded-full bg-[#ffffff7c] absolute top-[-2px] right-[-9px] flex items-center justify-center text-red-600 font-bold text-sm ">
-                2
+              <HeartIcon width="w-6" hight="h-6"/>
+              <div className="w-5 h-5 rounded-full bg-[#ffffff65] absolute top-[-2px] right-[-9px] flex items-center justify-center text-red-600 font-bold text-sm ">
+                {favorites.length}
               </div>
             </div>
 
             <div className="line w-[1px] h-[25px] bg-[#706d6d]"></div>
             <div className="relative">
-              <img src="/assets/Bag.svg" alt="" className="md:w-6 h-6" />
-              <div className="w-5 h-5 rounded-full bg-[#ffffff7c] absolute top-[-2px] right-[-9px] flex items-center justify-center text-red-600 font-bold text-sm ">
+              <BagIcon width={'w-6'} hight={'h-6'} />
+              <div className="w-5 h-5 rounded-full bg-[#ffffff65] absolute top-[-2px] right-[-9px] flex items-center justify-center text-red-600 font-bold text-sm ">
                 {totalCount ? totalCount : 0}
               </div>
             </div>

@@ -13,8 +13,8 @@ const Coupon = () => {
           className="outline-none pl-6 w-[65%] md:w-[78%] border border-gray-200 py-[14px] rounded-l-full"
         />
         <button
-          className="bg-green-950 text-[var(--text-gray)] w-[35%] md:w-[22%]  py-[14px]  rounded-r-full transition-all ease-in-out duration-300
-      hover:border hover:border-green-950 hover:bg-transparent hover:text-green-950 whitespace-nowrap"
+          className="bg-green-600 text-[var(--text-gray)] w-[35%] md:w-[22%]  py-[14px]  rounded-r-full transition-all ease-in-out duration-300
+      hover:border hover:border-green-600 hover:bg-transparent hover:text-green-600 whitespace-nowrap"
         >
           Apply Coupon
         </button>
