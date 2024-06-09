@@ -1,13 +1,13 @@
 'use client'
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext,  useState } from "react";
 import Button from "../Button/Button";
 import { ClobalContext } from "@/app/context/Context";
 
 function Search() {
     const context = useContext(ClobalContext);
     if (!context) return;
-    const { getInputSearch, handleSearch, search, data } = context;
-    const [length, setLength] = useState(data.length)
+    const { getInputSearch, handleSearch, search, data, length } = context;
+  
 
   return (
     <form 

@@ -24,6 +24,7 @@ export type GlobalStateType = {
   getInputSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSearch: (e: React.FormEvent<HTMLFormElement>) => void;
   search: string;
+  length: number;
 
   setButtonInnerText: React.Dispatch<React.SetStateAction<string>>;
 };
@@ -59,6 +60,8 @@ const Context = ({ children }: { children: React.ReactNode }) => {
   const [value, setValue] = useState<number[]>([0, 20]);
   const [search, setSearch] = useState("");
   const [buttonInnerText, setButtonInnerText] = useState("");
+
+  const [length, setLength] = useState(data.length)
 
   useEffect(() => {
     const categorySet = new Set(data.map((product) => product.category));
@@ -107,7 +110,7 @@ const Context = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
-  
+
 
   useEffect(() => {
     if (shoppingCartItems.length > 0) {
@@ -209,6 +212,7 @@ const Context = ({ children }: { children: React.ReactNode }) => {
         handleSearch,
         search,
         setButtonInnerText,
+        length
       }}
     >
       {children}
