@@ -2,6 +2,7 @@
 import { ClobalContext, DataType } from "@/app/context/Context";
 import React, { useContext } from "react";
 import Link from "next/link";
+import Overlay from "../Overlay/Overlay";
 
 type ProductDescType = {
   params: string;
@@ -10,7 +11,7 @@ type ProductDescType = {
 function Productdescription({ params }: ProductDescType) {
   const context = useContext(ClobalContext);
   if (!context) return;
-  const { data } = context;
+  const { data, overlay, setOverlay } = context;
 
 
   const productDetails = data.filter((item) => item.id === Number(params));
@@ -19,7 +20,7 @@ function Productdescription({ params }: ProductDescType) {
   return (
     <>
       {productDetails.map((item: DataType, i: number) => (
-        <div key={i} className="w-full  mt-8 mb-10 mx-auto">
+        <div key={i} className="w-full  mt-8 mx-auto">
           <div className=" flex flex-col md:flex-row items-center justify-between">
             <div className="w-full h-[300px] md:h-[450px] bg-white flex items-center justify-center md:w-[40%] relative">
               <Link href={"/"}>
@@ -28,11 +29,14 @@ function Productdescription({ params }: ProductDescType) {
                 </span>
               </Link>
               <img
+              onClick={() => setOverlay(item.image)}
                 className="w-[250px] h-[250px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] "
                 src={item.image}
                 alt=""
               />
             </div>
+
+            {overlay === item.image && <Overlay />}
 
             <div className="w-full details flex flex-col md:w-[48%] gap-6 ">
               <div className="flex flex-col items-start gap-[20px]">

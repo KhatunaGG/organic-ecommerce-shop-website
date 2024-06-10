@@ -11,10 +11,10 @@ type ParamsType = {
 export default function page({params}: ParamsType) {
  
   return (
-    <div>
+    <div className="relative">
       <SignSection />
       <Hero />
-      <div className='w-full px-[5%] lg:px-[7%]'>
+      <div className='w-full px-[5%] lg:px-[7%] '>
         <Productdescription params={params.id} />
       </div>
       

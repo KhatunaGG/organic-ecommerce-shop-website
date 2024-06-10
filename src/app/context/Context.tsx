@@ -27,6 +27,8 @@ export type GlobalStateType = {
   length: number;
 
   setButtonInnerText: React.Dispatch<React.SetStateAction<string>>;
+  setOverlay: React.Dispatch<React.SetStateAction<string>>;
+  overlay: string;
 };
 
 export type RatingType = {
@@ -60,6 +62,7 @@ const Context = ({ children }: { children: React.ReactNode }) => {
   const [value, setValue] = useState<number[]>([0, 20]);
   const [search, setSearch] = useState("");
   const [buttonInnerText, setButtonInnerText] = useState("");
+  const [overlay, setOverlay] = useState('')
 
   const [length, setLength] = useState(data.length)
 
@@ -87,14 +90,6 @@ const Context = ({ children }: { children: React.ReactNode }) => {
     setSearch(e.target.value);
   };
 
-  // const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   if(!search) {
-  //     setData(data)
-  //   } else {
-  //     setData(typedDataJson.filter((item) => item.title.toLowerCase().includes(search.toLowerCase())))
-  //   }
-  // }
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -212,7 +207,9 @@ const Context = ({ children }: { children: React.ReactNode }) => {
         handleSearch,
         search,
         setButtonInnerText,
-        length
+        length,
+        setOverlay, 
+        overlay
       }}
     >
       {children}
