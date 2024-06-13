@@ -15,19 +15,18 @@ const Login = () => {
   const router = useRouter();
   const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
-  // Ensure the context is accessed after hook initialization
-  if (!context) return null;
-
-  const { setLoggedInUser } = context;
+  const setLoggedInUser = context ? context.setLoggedInUser : () => {};
 
   useEffect(() => {
+    if (!context) return;
+
     const unsubscribe = onAuthStateChanged(auth, (currentUser: User | null) => {
       setLoggedInUser(currentUser?.email ?? "");
     });
     return () => {
       unsubscribe();
     };
-  }, [setLoggedInUser]);
+  }, [context, setLoggedInUser]);
 
   const logout = async () => {
     await signOut(auth);
@@ -47,6 +46,8 @@ const Login = () => {
       console.error(err);
     }
   };
+
+  if (!context) return null;
 
   return (
     <div className="w-full md:w-[50%] flex flex-col gap-8 p-6 rounded-md shadow-md">
