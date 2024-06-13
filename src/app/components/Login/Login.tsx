@@ -9,36 +9,29 @@ import { onAuthStateChanged, User, signOut } from "firebase/auth";
 
 const Login = () => {
   const context = useContext(ClobalContext);
-  if (!context) return null;
-  const { setLoggedInUser } = context;
-  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
-  const user = onAuthStateChanged(auth, (currentUser: User | null) => {
-    setLoggedInUser(currentUser?.email ?? '');
+  // Ensure the context is accessed after hook initialization
+  if (!context) return null;
 
-  });
+  const { setLoggedInUser } = context;
 
-  // useEffect(() => {
-  //   const authUser = onAuthStateChanged(auth, (currentUser: User | null) => {
-  //       if(currentUser) {
-  //         setLoggedInUser(currentUser?.email ?? '')
-  //       } else {
-  //         setLoggedInUser('')
-  //       }
-  //   })
-  //   return () => {
-  //     authUser()
-  //   }
-  // },[])
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser: User | null) => {
+      setLoggedInUser(currentUser?.email ?? "");
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, [setLoggedInUser]);
 
-
-const logout = async () => {
-  await signOut(auth)
-}
+  const logout = async () => {
+    await signOut(auth);
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -62,9 +55,7 @@ const logout = async () => {
       </h1>
 
       <form onSubmit={handleSubmit} className="w-full flex flex-col gap-6">
- 
-
-        <div className="w-full flex flex-col  gap-y-1">
+        <div className="w-full flex flex-col gap-y-1">
           <label htmlFor="email">Email</label>
           <input
             id="email"
@@ -76,7 +67,7 @@ const logout = async () => {
           />
         </div>
 
-        <div className="w-full flex flex-col  gap-y-1">
+        <div className="w-full flex flex-col gap-y-1">
           <label htmlFor="password">Password</label>
           <input
             id="password"
@@ -103,4 +94,3 @@ const logout = async () => {
 };
 
 export default Login;
-
