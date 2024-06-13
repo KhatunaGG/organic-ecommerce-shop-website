@@ -3,11 +3,18 @@ import { ClobalContext } from "@/app/context/Context";
 import Link from "next/link";
 import React, { useContext } from "react";
 import { BagIcon, HeartIcon } from "../_atoms";
+import { signOut } from "firebase/auth";
+import { auth } from "@/app/firebase/config";
 
 const SignSection = () => {
   const context = useContext(ClobalContext);
   if (!context) return;
-  const { totalPrice, totalCount, favorites } = context;
+  const { totalPrice, totalCount, favorites, loggedInUser } = context;
+
+  const logout = async () => {
+    await signOut(auth)
+  }
+  
 
 
   
@@ -44,17 +51,29 @@ const SignSection = () => {
               </p>
             </div>
           </div>
+
+
           <div className="w-full md:w-[50%] flex justify-end">
+
+
+
             <div className="sign flex flex-row items-center gap-2 ">
               <Link href={"/pages/signin"}>
-                <button className="text-gray-400 text-[13px]">Sign In</button>
+                <button className="text-gray-400 text-[13px]">{loggedInUser ? loggedInUser : 'Sign In'}</button>
               </Link>
               <span className="text-gray-400 text-[13px]">/</span>
               <Link href={"/pages/signup"}>
-                <button className="text-gray-400 text-[13px]"> Sign Up</button>
+                <button
+                onClick={() => {loggedInUser && logout()}}
+                className="text-gray-400 text-[13px]"> {loggedInUser ? 'Log out' : 'Sign Up'}</button>
               </Link>
             </div>
+
+
           </div>
+
+
+
         </div>
       </div>
     </section>

@@ -12,9 +12,11 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.19",
+    "firebase": "^10.12.2",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-firebase-hooks": "^5.1.1",
     "react-responsive-carousel": "^3.2.23",
     "react-scroll-to-top": "^3.0.0",
     "react-zoom-pan-pinch": "^3.4.4"

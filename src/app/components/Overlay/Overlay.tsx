@@ -1,12 +1,12 @@
 "use client";
 import { useContext } from "react";
-
 import {
   TransformWrapper,
   TransformComponent,
   useControls,
 } from "react-zoom-pan-pinch";
 import { ClobalContext } from "@/app/context/Context";
+
 
 const Overlay = () => {
   const context = useContext(ClobalContext);

@@ -44,6 +44,7 @@ function Filter() {
                   id=""
                   checked={checked === i}
                   onChange={() => handleFilter(i, item.toLowerCase())}
+                  className="rounded-full w-3 h-3 text-green-600 focus:ring-green-600"
                 />
                 <label
                   className="cursor-pointer hover:cursor-pointer text-green-900"

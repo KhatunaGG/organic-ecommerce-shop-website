@@ -29,6 +29,10 @@ export type GlobalStateType = {
   setButtonInnerText: React.Dispatch<React.SetStateAction<string>>;
   setOverlay: React.Dispatch<React.SetStateAction<string>>;
   overlay: string;
+  setLoggedInUser: React.Dispatch<React.SetStateAction<string>>;
+
+ 
+  loggedInUser: string;
 };
 
 export type RatingType = {
@@ -65,6 +69,9 @@ const Context = ({ children }: { children: React.ReactNode }) => {
   const [overlay, setOverlay] = useState('')
 
   const [length, setLength] = useState(data.length)
+  const [loggedInUser, setLoggedInUser] = useState('')
+
+
 
   useEffect(() => {
     const categorySet = new Set(data.map((product) => product.category));
@@ -209,7 +216,9 @@ const Context = ({ children }: { children: React.ReactNode }) => {
         setButtonInnerText,
         length,
         setOverlay, 
-        overlay
+        overlay,
+        setLoggedInUser,
+        loggedInUser
       }}
     >
       {children}
