@@ -86,7 +86,7 @@ const Login = () => {
       <div className="w-full flex flex-row items-center justify-start gap-2 text-xs lg:text-sm">
         <input type="checkbox" name="" id="" />
         <label htmlFor="">
-          Do not have an account?{" "}
+          Do not have an account?
           <span className="font-bold text-green-950"> Sign up </span>
         </label>
       </div>
