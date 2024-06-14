@@ -1,6 +1,9 @@
 "use client";
 import React, { createContext, useEffect, useState } from "react";
 import datajson from "../data/data.json";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged } from "firebase/auth";
+import {auth} from '../firebase/config'
+
 
 export type GlobalStateType = {
   data: DataType[];
@@ -70,6 +73,10 @@ const Context = ({ children }: { children: React.ReactNode }) => {
 
   const [length, setLength] = useState(data.length)
   const [loggedInUser, setLoggedInUser] = useState('')
+
+
+
+
 
 
 
@@ -188,6 +195,33 @@ const Context = ({ children }: { children: React.ReactNode }) => {
     );
     return setShoppingCartItems(updatedShoppingCart);
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <ClobalContext.Provider
