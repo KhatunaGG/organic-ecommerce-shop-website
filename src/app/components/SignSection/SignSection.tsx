@@ -11,8 +11,6 @@ const SignSection = () => {
   if (!context) return;
   const { totalPrice, totalCount, favorites, loggedInUser } = context;
 
-
-
   
   return (
     <section className="w-full h-[15vh] md:h-[8vh] bg-green-950 flex flex-row items-center flex-grow justify-between px-[3%] lg:px-[7%] ">
