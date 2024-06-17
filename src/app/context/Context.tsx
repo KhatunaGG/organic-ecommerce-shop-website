@@ -80,11 +80,11 @@ const Context = ({ children }: { children: React.ReactNode }) => {
   const [isChecked, setIsChecked] = useState('')
 
 
-  console.log(isChecked, 'isChecked')
+
 
 
 const handleChange = (path: string) => {
-  console.log(path, 'path from context')
+
   if(isChecked === path) {
     setIsChecked('')
   } else  {

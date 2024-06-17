@@ -167,7 +167,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 const Register = () => {
   const context = useContext(ClobalContext);
   if (!context) return;
-  const { handleChange, isChecked, setIsChecked } = context;
+  const { handleChange, isChecked, setIsChecked, setLoggedInUser } = context;
 
   const [createUserWithEmailAndPassword] =
     useCreateUserWithEmailAndPassword(auth);

@@ -57,7 +57,7 @@ const Login = () => {
       if(res?.user){
         sessionStorage.setItem("user", "exist");
         router.push("/");
-        setLoggedInUser(res.user.email || ''); 
+        // setLoggedInUser(res.user.email || ''); 
       }
       setEmail("");
       setPassword("");
