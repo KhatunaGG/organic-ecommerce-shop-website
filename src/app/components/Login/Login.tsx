@@ -41,14 +41,15 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 
 const Login = () => {
-  const context = useContext(ClobalContext);
-  if (!context) return;
-  const { setLoggedInUser } = context;
+
   const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter()
+  const context = useContext(ClobalContext);
+  if (!context) return;
+  const { setLoggedInUser } = context;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {

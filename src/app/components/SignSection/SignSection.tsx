@@ -9,24 +9,29 @@ import { signOut } from "firebase/auth";
 import { auth } from "@/app/firebase/config";
 import { useRouter } from "next/navigation";
 
+
 const SignSection = () => {
   const context = useContext(ClobalContext);
-  if (!context) return;
-  const { totalPrice, totalCount, favorites, loggedInUser, setLoggedInUser } = context;
   const router = useRouter();
   const [currentUser] = useAuthState(auth);
-  let userSession = null
-  
+  if (!context) return;
+  const { totalPrice, totalCount, favorites, loggedInUser, setLoggedInUser } = context;
+
 
 
 
   useEffect(() => {
-    userSession = sessionStorage.getItem("user");
+    const userSession = sessionStorage.getItem("user");
     setLoggedInUser(currentUser?.email || "")
-  }, [currentUser]);
+  }, [currentUser, setLoggedInUser]);
 
-  console.log(currentUser, 'currentuser')
-  console.log(loggedInUser, 'loggedInUser')
+
+  // const handleSignOut = () => {
+  //   if (currentUser) {
+  //     signOut(auth);
+  //     sessionStorage.removeItem("user");
+  //   }
+  // };
 
 
 
