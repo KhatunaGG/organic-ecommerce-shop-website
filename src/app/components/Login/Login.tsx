@@ -33,20 +33,38 @@
 // import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 "use client";
-import React, { useState } from "react";
+import { ClobalContext } from "@/app/context/Context";
+import { auth } from "@/app/firebase/config";
+import { useRouter } from "next/navigation";
+import React, { useContext, useState } from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+
 
 const Login = () => {
-  // const context = useContext(ClobalContext);
-  // if (!context) return;
-  // const { data, categoryArray, checked, handleFilter, value, setValue } = context;
+  const context = useContext(ClobalContext);
+  if (!context) return;
+  const { setLoggedInUser } = context;
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter()
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    console.log(password, email);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    try {
+      e.preventDefault();
+      const res = await signInWithEmailAndPassword(email, password);
+      if(res?.user){
+        sessionStorage.setItem("user", "exist");
+        router.push("/");
+        setLoggedInUser(res.user.email || ''); 
+      }
+      setEmail("");
+      setPassword("");
+      console.log(res, 'response')
+    } catch (er) {
+      console.log(er);
+    }
   };
 
   return (

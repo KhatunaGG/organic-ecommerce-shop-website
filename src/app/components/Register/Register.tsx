@@ -159,32 +159,45 @@
 
 //----------------------------------------------------------------------------
 "use client";
-// import { auth } from "../../firebase/config";
-import React, { useState } from "react";
+import { ClobalContext } from "@/app/context/Context";
+import { auth } from "@/app/firebase/config";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useContext, useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 const Register = () => {
+  const context = useContext(ClobalContext);
+  if (!context) return;
+  const { handleChange, isChecked, setIsChecked } = context;
 
-  // const [createUserWithEmailAndPassword] =
-  //   useCreateUserWithEmailAndPassword(auth);
+  const [createUserWithEmailAndPassword] =
+    useCreateUserWithEmailAndPassword(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter()
+  const path = usePathname()
+  // console.log(path.split('/').slice(-1).join(), 'pathname')
 
 
 
 
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   try {
-  //     e.preventDefault();
-  //     const res = await createUserWithEmailAndPassword(email, password)
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    try {
+      e.preventDefault();
+      const res = await createUserWithEmailAndPassword(email, password)
 
-  //   console.log(res, 'respons')
-  //   }catch (er) {
-  //     const errorMessege = er
-  //     console.log(er, 'er')
-  //     console.log(errorMessege, 'errorMessege')
-  //   }
+      if(res?.user){
+        router.push("/sign-in");
+      }
+      setPassword("");
+      setEmail("");
+
+    }catch (er) {
+      const errorMessege = er
+      console.log(er, 'er')
+      console.log(errorMessege, 'errorMessege')
+    }
     
-  // };
+  };
 
   return (
     <div className="w-full md:w-[50%] flex flex-col gap-8 p-6 rounded-md shadow-md">
@@ -193,9 +206,7 @@ const Register = () => {
       </h1>
 
       <form
-      
-      // onSubmit={handleSubmit}
-      
+      onSubmit={handleSubmit}
       className="w-full flex flex-col gap-6">
         <div className="w-full flex flex-col  gap-y-1">
           <label htmlFor="">Email</label>
@@ -227,10 +238,21 @@ const Register = () => {
       </form>
 
       <div className="w-full flex flex-row items-center justify-start gap-2 text-xs lg:text-sm">
-        <input type="checkbox" name="" id="" />
-        <label htmlFor="">
+        <input
+        onChange={() => handleChange(path)}
+        type="checkbox"
+        checked={isChecked === path}
+        name="" id="" />
+         <label htmlFor="">
           Already have an account?{" "}
-          <span className="font-bold text-green-950"> Sign in </span>
+          <span
+          onClick={() => {
+            if(isChecked === path){
+              router.push('/pages/signin')
+              setIsChecked('')
+            }
+          }}
+          className="font-bold text-green-950 cursor-pointer"> Sign in </span>
         </label>
       </div>
     </div>
