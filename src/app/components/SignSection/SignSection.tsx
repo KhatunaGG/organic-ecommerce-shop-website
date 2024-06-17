@@ -14,16 +14,20 @@ const SignSection = () => {
   const context = useContext(ClobalContext);
   const router = useRouter();
   const [currentUser] = useAuthState(auth);
+
+
   if (!context) return;
   const { totalPrice, totalCount, favorites, loggedInUser, setLoggedInUser } = context;
 
-
-
-
-  useEffect(() => {
-    const userSession = sessionStorage.getItem("user");
-    setLoggedInUser(currentUser?.email || "")
-  }, [currentUser, setLoggedInUser]);
+if(currentUser) {
+  const userSession = sessionStorage.getItem("user");
+  setLoggedInUser(currentUser?.email || "")
+}
+  // useEffect(() => {
+  //   const userSession = sessionStorage.getItem("user");
+  //   setLoggedInUser(currentUser?.email || "")
+  // }, [currentUser, setLoggedInUser]);
+  
 
 
   // const handleSignOut = () => {
