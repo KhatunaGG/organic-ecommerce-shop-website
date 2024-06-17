@@ -36,6 +36,9 @@ export type GlobalStateType = {
 
  
   loggedInUser: string;
+  handleChange: (value: string) => void;
+  isChecked: string;
+  setIsChecked: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export type RatingType = {
@@ -72,10 +75,23 @@ const Context = ({ children }: { children: React.ReactNode }) => {
   const [overlay, setOverlay] = useState('')
 
   const [length, setLength] = useState(data.length)
-  const [loggedInUser, setLoggedInUser] = useState('')
+  const [loggedInUser, setLoggedInUser] = useState('');
+
+  const [isChecked, setIsChecked] = useState('')
 
 
+  console.log(isChecked, 'isChecked')
 
+
+const handleChange = (path: string) => {
+  console.log(path, 'path from context')
+  if(isChecked === path) {
+    setIsChecked('')
+  } else  {
+    setIsChecked(path)
+  }
+  
+}
 
 
 
@@ -252,7 +268,10 @@ const Context = ({ children }: { children: React.ReactNode }) => {
         setOverlay, 
         overlay,
         setLoggedInUser,
-        loggedInUser
+        loggedInUser,
+        handleChange,
+        isChecked,
+        setIsChecked
       }}
     >
       {children}
