@@ -9,20 +9,35 @@ import { signOut } from "firebase/auth";
 import { auth } from "@/app/firebase/config";
 import { useRouter } from "next/navigation";
 
+
 const SignSection = () => {
   const context = useContext(ClobalContext);
-  if (!context) return;
-  const { totalPrice, totalCount, favorites, loggedInUser } = context;
   const router = useRouter();
   const [currentUser] = useAuthState(auth);
-  let userSession = null
+
+
+  if (!context) return;
+  const { totalPrice, totalCount, favorites, loggedInUser, setLoggedInUser } = context;
+
+if(currentUser) {
+  const userSession = sessionStorage.getItem("user");
+  setLoggedInUser(currentUser?.email || "")
+}
+  // useEffect(() => {
+  //   const userSession = sessionStorage.getItem("user");
+  //   setLoggedInUser(currentUser?.email || "")
+  // }, [currentUser, setLoggedInUser]);
   
 
 
+  // const handleSignOut = () => {
+  //   if (currentUser) {
+  //     signOut(auth);
+  //     sessionStorage.removeItem("user");
+  //   }
+  // };
 
-  useEffect(() => {
-    userSession = sessionStorage.getItem("user");
-  }, [currentUser]);
+
 
   return (
     <section className="w-full h-[15vh] md:h-[8vh] bg-green-950 flex flex-row items-center flex-grow justify-between px-[3%] lg:px-[7%] ">
@@ -62,14 +77,14 @@ const SignSection = () => {
             <div className="sign flex flex-row items-center gap-2 ">
               <Link href={"/pages/signin"}>
                 <button className="text-gray-400 text-[13px]">
-                  {currentUser?.email ? currentUser?.email : 'Sign In'}
+                  {loggedInUser ? loggedInUser : 'Sign In'}
                 </button>
               </Link>
               <span className="text-gray-400 text-[13px]">/</span>
               <Link href={"/pages/signup"}>
                 <button
                   onClick={() => {
-                    if(currentUser?.email) {
+                    if(loggedInUser) {
                           signOut(auth);
                     sessionStorage.removeItem("user");
                     }
@@ -77,7 +92,7 @@ const SignSection = () => {
                   }}
                   className="text-gray-400 text-[13px]"
                 >
-                  {currentUser?.email ? 'Logout' : 'Sign Up'}
+                  {loggedInUser ? 'Logout' : 'Sign Up'}
                 </button>
               </Link>
             </div>
