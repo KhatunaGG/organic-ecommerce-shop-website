@@ -23,12 +23,6 @@ const SignSection = () => {
     setLoggedInUser(currentUser?.email || "");
   }
 
-  // const handleSignOut = () => {
-  //   if (currentUser) {
-  //     signOut(auth);
-  //     sessionStorage.removeItem("user");
-  //   }
-  // };
 
   return (
     <section className="w-full h-[15vh] md:h-[8vh] bg-green-950 flex flex-row items-center flex-grow justify-between px-[3%] lg:px-[7%] ">
