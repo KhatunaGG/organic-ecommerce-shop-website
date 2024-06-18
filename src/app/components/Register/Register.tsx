@@ -66,7 +66,7 @@ const Register = () => {
   const context = useContext(ClobalContext);
   if (!context) return;
   const { handleChange, isChecked, setIsChecked, setLoggedInUser } = context;
-  // console.log(path.split('/').slice(-1).join(), 'pathname')
+
 
 
 
